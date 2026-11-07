@@ -1,15 +1,19 @@
 <?php
-session_start();
+if (session_status() === PHP_SESSION_NONE) {
+  session_start();
+}
 
-$routesArray = explode("/", $_SERVER['REQUEST_URI']);
+$requestUri = isset($_SERVER['REQUEST_URI']) ? $_SERVER['REQUEST_URI'] : "/";
+$requestPath = parse_url($requestUri, PHP_URL_PATH);
+$routesArray = explode("/", is_string($requestPath) ? $requestPath : "/");
 
 $routesArray = array_filter($routesArray);
 
-if (count(array_filter($routesArray)) > 1) {
+if (count($routesArray) > 1) {
   echo '
     <script>
 
-      window.location = "http://localhost/faraonbd/"
+      window.location = "http://localhost/acerosmagno/"
     </script>
   ';
   # code...
@@ -17,12 +21,16 @@ if (count(array_filter($routesArray)) > 1) {
 
 if (isset($_GET["cerrar_sesion"]) && $_GET["cerrar_sesion"] == 1) {
 
-  session_destroy();
+  $_SESSION = [];
+
+  if (session_status() === PHP_SESSION_ACTIVE) {
+    session_destroy();
+  }
 
   echo '
     <script>
 
-      window.location = "http://localhost/faraonbd/"
+      window.location = "http://localhost/acerosmagno/"
     </script>
   ';
 }
@@ -38,7 +46,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FaraonDb | Distribuidor <?php echo date("Y"); ?></title>
+  <title>Aceros | Magno <?php echo date("Y"); ?></title>
 
   <link rel="shortcut icon" href="vistas/assets/dist/img/AdminLTELogo.png" type="image/x-icon">
 
@@ -179,7 +187,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <?php if (isset($_SESSION["usuario"])): ?>
 
-<body class="hold-transition sidebar-mini">
+<body class="hold-transition sidebar-mini dark-mode">
   <div class="wrapper">
 
     <?php
@@ -217,7 +225,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 <?php else: ?>
 
-<body>
+<body class="dark-mode">
   <?php include "vistas/login.php" ?>
 </body>
 

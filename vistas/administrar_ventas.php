@@ -559,7 +559,7 @@ $(document).ready(function() {
         });
       } else {
         //window.open("extensiones/fpdf/boleta_venta.php?codigo=" + nroBoleta);
-        window.open("http://localhost/faraonbd//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
+        window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
           nroBoleta);
         //window.open("https://faraonv2.infinitassoluciones.net//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +nroBoleta);
       }

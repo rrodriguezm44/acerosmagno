@@ -21,7 +21,7 @@ class UsuarioControlador
         echo '
             <script>
 
-              window.location = "http://localhost/faraonbd/"
+              window.location = "http://localhost/acerosmagno/"
               
             </script>
         ';
@@ -29,7 +29,7 @@ class UsuarioControlador
         echo '
             <script>
 
-              fncSweetAlert("error", "Usuario y/o contraseña invalida", "http://localhost/faraonbd/")
+              fncSweetAlert("error", "Usuario y/o contraseña invalida", "http://localhost/acerosmagno/")
             
 
             </script>

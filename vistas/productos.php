@@ -71,7 +71,7 @@
 
         <table id="tbl_productos" class="table table-striped table-dark table-hover w-100 shadow">
           <thead>
-            <faraonbd>
+            <acerosmagno>
               <th></th>
               <th>id</th>
               <th>Codigo</th>
@@ -91,7 +91,7 @@
               <th>U.Medida</th>
               <th>DocuCompra</th>
               <th>ProvId</th>
-            </faraonbd>
+            </acerosmagno>
           </thead>
           <tbody>
             <tr>

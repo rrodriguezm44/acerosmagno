@@ -1,5 +1,5 @@
   <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+  <nav class="main-header navbar navbar-expand navbar-dark navbar-light">
     <!-- Left navbar links -->
     <ul class="navbar-nav">
       <li class="nav-item">
@@ -48,7 +48,7 @@
         </a>
       </li>
       <li class="nav-item">
-        <a href="http://localhost/faraonbd?cerrar_sesion=1" class="nav-link">
+        <a href="http://localhost/acerosmagno?cerrar_sesion=1" class="nav-link">
           <i class="nav-icon fas text-danger fa-sign-out-alt" title="Cerrar Sesion"></i>
         </a>
       </li>

@@ -300,7 +300,7 @@
           });
         } else {
           //window.open("extensiones/fpdf/boleta_venta.php?codigo=" + nroBoleta);
-          window.open("http://localhost/faraonbd//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
+          window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
             nroBoleta);
         }
       })

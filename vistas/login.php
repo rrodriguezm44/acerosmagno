@@ -4,7 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>FaraonDb | Login <?php echo date("Y"); ?></title>
+  <title>AcerosMagno | Login <?php echo date("Y"); ?></title>
 
   <!-- Materialize CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
@@ -129,14 +129,14 @@
     <div class="login-card">
       <div class="login-header">
         <i class="material-icons card-icon">lock_outline</i>
-        <h1>FARAON</h1>
+        <h1>AcerosMagno</h1>
         <p>Sistema de Gestión</p>
       </div>
 
       <form method="post" class="needs-validation-login" novalidate>
         <!-- USUARIO DEL SISTEMA -->
         <div class="input-field">
-          <i class="material-icons prefix">person</i>
+          <i class="material-icons prefix">persona</i>
           <input type="text" id="loginUsuario" name="loginUsuario" required>
           <label for="loginUsuario">Usuario</label>
           <div class="invalid-feedback">Debe ingresar su usuario.</div>

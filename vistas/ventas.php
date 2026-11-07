@@ -1138,7 +1138,7 @@ function realizarVenta() {
             if (result.isConfirmed) {
 
                            
-                  window.open("http://localhost/faraonbd//ajax/extensiones/fpdf/boleta_venta.php?codigo=" + nro_boleta);
+                  window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" + nro_boleta);
                 
               LimpiarInputs();
               /* Toast.fire({

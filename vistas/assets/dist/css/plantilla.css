@@ -143,6 +143,24 @@ button.btn.btn-danger.btn-sm.tabledit-confirm-button {
   border: 1px solid gray !important;
 }
 
+.dark-mode .form-control,
+.dark-mode select,
+.dark-mode .select2-container--default .select2-selection--single,
+.dark-mode .select2-container--default .select2-selection--multiple {
+  background-color: #343a40 !important;
+  border-color: #6c757d !important;
+  color: #f8f9fa !important;
+}
+
+.dark-mode .select2-container--default .select2-selection__rendered,
+.dark-mode .select2-container--default .select2-selection__placeholder {
+  color: #f8f9fa !important;
+}
+
+.dark-mode .form-control::placeholder {
+  color: #adb5bd;
+}
+
 select[readonly].select2 + .select2-container {
   pointer-events: none;
   touch-action: none;
