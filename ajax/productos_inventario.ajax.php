@@ -25,12 +25,12 @@ if (isset($_POST['accion'])) {
 
             break;
 
-        case 'listar_unidad_medida':
+        // case 'listar_unidad_medida':
 
-            $response = ProductosModelo::mdlListarUnidadMedida();
-            echo json_encode($response);
+        //     $response = ProductosModelo::mdlListarUnidadMedida();
+        //     echo json_encode($response);
 
-            break;
+        //     break;
 
         case 'registrar_producto':
 

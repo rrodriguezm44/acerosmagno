@@ -1,6 +1,6 @@
 <?php
 // Conexión a la base de datos (ajusta con tus credenciales)
-$conn = new mysqli('localhost', 'root', '12345678', 'faraondb');
+$conn = new mysqli('localhost', 'root', '12345678', 'magnoinventario');
 
 if ($conn->connect_error) {
     die("Error de conexión: " . $conn->connect_error);

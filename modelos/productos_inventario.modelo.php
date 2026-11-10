@@ -317,16 +317,13 @@ class ProductosModelo
                                                         categoria_id,
                                                         subcategoria_id,
                                                         nombre, 
-                                                        unidad_medida,
                                                         stock,
                                                         precio_venta, 
                                                         precio_compra,
                                                         documento,
                                                         descuento,
-                                                        proveedor_id,
-                                                        precio_feria,
-                                                        precio_oferta) 
-                                                VALUES (?,?,?,upper(?),upper(?),?,?,?,upper(?),?,?,?,?)");
+                                                        proveedor_id) 
+                                                VALUES (?,?,?,upper(?),?,?,?,upper(?),?,?)");
 
             $dbh->beginTransaction();
             $stmt->execute(array(
@@ -334,15 +331,12 @@ class ProductosModelo
                 $array_datos_producto["id_categoria"],
                 $array_datos_producto["id_subcategoria"],
                 $array_datos_producto["descripcion"],
-                $array_datos_producto["id_unidad_medida"],
                 $array_datos_producto["stock_producto"],
                 $array_datos_producto["precio_venta"],
                 $array_datos_producto["precio_compra"],
                 $array_datos_producto["doc_producto"],
                 $array_datos_producto["descuento_producto"],
-                $array_datos_producto["id_proveedor"],
-                $array_datos_producto["precio_feria"],
-                $array_datos_producto["precio_oferta"]
+                $array_datos_producto["id_proveedor"]
             ));
             $dbh->commit();
 
@@ -394,15 +388,12 @@ class ProductosModelo
                                         categoria_id = ?,
                                         subcategoria_id = ?,
                                         nombre = upper(?), 
-                                        unidad_medida = upper(?),
                                         stock = ?,
                                         precio_venta = ?, 
                                         precio_compra = ?,
                                         documento = upper(?),
                                         descuento = ?,
-                                        proveedor_id = ?,
-                                        precio_feria = ?,
-                                        precio_oferta = ?
+                                        proveedor_id = ?
                                     WHERE 
                                         codigo_producto = ?");
 
@@ -412,15 +403,12 @@ class ProductosModelo
                 $array_datos_producto["id_categoria"],
                 $array_datos_producto["id_subcategoria"],
                 $array_datos_producto["descripcion"],
-                $array_datos_producto["id_unidad_medida"],
                 $array_datos_producto["stock_producto"],
                 $array_datos_producto["precio_venta"],
                 $array_datos_producto["precio_compra"],
                 $array_datos_producto["doc_producto"],
                 $array_datos_producto["descuento_producto"],
                 $array_datos_producto["id_proveedor"],
-                $array_datos_producto["precio_feria"],
-                $array_datos_producto["precio_oferta"],
                 $array_datos_producto["codigo_producto"]
             ));
 
@@ -430,13 +418,15 @@ class ProductosModelo
 
             $costo_total_producto = $array_datos_producto["precio_compra"] * $array_datos_producto["stock_producto"];
             //REGISTRAMOS KARDEX - INVENTARIO INICIAL
-            $stmt = $dbh->prepare("call prc_actualizar_stock_y_kardex(?,?,?);");
+            $stmt = $dbh->prepare("call prc_actualizar_stock_y_kardex(?,?,?,?,upper(?));");
 
             $dbh->beginTransaction();
             $stmt->execute(array(
                 $array_datos_producto["codigo_producto"],
                 $array_datos_producto["stock_producto"],
-                $array_datos_producto["precio_venta"]
+                $array_datos_producto["precio_venta"],
+                $array_datos_producto["precio_compra"],
+                $array_datos_producto["doc_producto"]
             ));
 
            $dbh->commit();

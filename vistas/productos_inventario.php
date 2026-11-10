@@ -98,13 +98,10 @@
               <th>P. Venta</th><!-- *9 -->
               <th>Desct.%</th><!-- *10 -->
               <th>Proveedor</th><!-- *11 -->
-              <th>P. Feria</th><!-- 12 -->
-              <th>P. Oferta</th><!-- 13 -->
-              <th>CategoriaId</th><!-- 14 -->
-              <th>SubCategoriaId</th><!-- 15 -->
-              <th>U.Medida</th><!-- 16 -->
-              <th>DocuCompra</th><!-- 17 -->
-              <th>ProvId</th><!-- 18 -->
+              <th>CategoriaId</th><!-- 12 -->
+              <th>SubCategoriaId</th><!-- 13 -->
+              <th>DocuCompra</th><!-- 14 -->
+              <th>ProvId</th><!-- 15 -->
             </tr>
           </thead>
           <tbody class="text-small">
@@ -223,9 +220,9 @@ VENTA MODAL PARA REGISTRAR O ACTUALIZAR UN PRODUCTO
 
                 <input type="text" class="form-control text-uppercase" id="descripcion" name="descripcion" required>
                 <label for="descripcion"><i class="fas fa-file-signature fs-6"></i><span class="small">
-                    Descripcion</span><span class="text-danger">*</span></label>
+                    Nombre del Producto</span><span class="text-danger">*</span></label>
 
-                <div class="invalid-feedback">Ingrese la descripción</div>
+                <div class="invalid-feedback">Ingrese la nombre</div>
 
               </div>
 
@@ -275,36 +272,7 @@ VENTA MODAL PARA REGISTRAR O ACTUALIZAR UN PRODUCTO
               </div>
 
             </div>
-            <!-- PRECIO DE FERIA -->
-            <div class="col-12 col-lg-3">
-
-              <div class="form-floating mb-2">
-
-                <input type="number" step="any" min="0" id="precio_feria" class="form-control" name="precio_feria"
-                  placeholder="Precio de Feria" required>
-                <label for="precio_feria"><i class="fas fa-comment-dollar fs-6"></i><span class="small"> Precio de
-                    Feria</span><span class="text-danger">*</span></label>
-
-                <div class="invalid-feedback">Ingrese el Precio de Feria</div>
-
-              </div>
-
-            </div>
-            <!-- PRECIO DE OFERTA -->
-            <div class="col-12 col-lg-3">
-
-              <div class="form-floating mb-2">
-
-                <input type="number" step="any" min="0" id="precio_oferta" class="form-control" name="precio_oferta"
-                  placeholder="Precio de Oferta" required>
-                <label for="precio_Oferta"><i class="fas fa-piggy-bank fs-6"></i><span class="small"> Precio de
-                    Oferta</span><span class="text-danger">*</span></label>
-
-                <div class="invalid-feedback">Ingrese el Precio de Oferta</div>
-
-              </div>
-
-            </div>
+            
 
             <!-- DESCUENTO -->
             <div class="col-12 col-lg-3">
@@ -337,21 +305,7 @@ VENTA MODAL PARA REGISTRAR O ACTUALIZAR UN PRODUCTO
               </div>
 
             </div>
-            <!-- UNIDAD MEDIDA -->
-            <div class="col-12 col-lg-3">
 
-              <div class="form-floating mb-2">
-
-                <input type="text" id="id_unidad_medida" class="form-control" name="id_unidad_medida"
-                  placeholder="Unidad de Medida">
-                <label for="id_unidad_medida"><i class="fas fa-eye-dropper fs-6"></i><span
-                    class="small">Unidad/Medida</span></label>
-
-                <!-- <div class="invalid-feedback">Seleccione la Unidad de Medida</div> -->
-
-              </div>
-
-            </div>
             <!-- PROVEEDOR -->
             <div class="col-12 col-lg-3">
 
@@ -402,61 +356,6 @@ VENTA MODAL PARA REGISTRAR O ACTUALIZAR UN PRODUCTO
 </div>
 <!-- /. End -->
 
-<!-- =============================================================================================================================
-VENTA MODAL PARA AUMENTAR O DISMINUIR EL STOCK DEL PRODUCTO
-===============================================================================================================================-->
-<!-- <div class="modal fade" id="mdlGestionarStock" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered">
-    <div class="modal-content">
-
-      <div class="modal-header bg-gray py-2">
-        <h6 class="modal-title" id="titulo_modal_stock">Adicionar Stock</h6>
-        <button type="button" class="btn-close text-white fs-6" data-bs-dismiss="modal" aria-label="Close"
-          id="btnCerrarModalStock">
-        </button>
-      </div>
-
-      <div class="modal-body">
-
-        <div class="row">
-
-          <div class="col-12 mb-3">
-            <label for="" class="form-label text-primary d-block">Codigo: <span id="stock_codigoProducto"
-                class="text-secondary"></span></label>
-            <label for="" class="form-label text-primary d-block">Producto: <span id="stock_Producto"
-                class="text-secondary"></span></label>
-            <label for="" class="form-label text-primary d-block">Stock: <span id="stock_Stock"
-                class="text-secondary"></span></label>
-          </div>
-
-          <div class="col-12">
-            <div class="form-group mb-2">
-              <label class="" for="iptStockSumar">
-                <i class="fas fa-plus-circle fs-6"></i> <span class="small" id="titulo_modal_label">Agregar al
-                  Stock</span>
-              </label>
-              <input type="number" min="0" class="form-control form-control-sm" id="iptStockSumar"
-                placeholder="Ingrese cantidad a agregar al Stock">
-            </div>
-          </div>
-
-          <div class="col-12">
-            <label for="" class="form-label text-danger">Nuevo Stock: <span id="stock_NuevoStock"
-                class="text-secondary"></span></label><br>
-          </div>
-
-        </div>
-
-      </div>
-
-      <div class="modal-footer">
-        <a class="btn btn-secondary btn-sm" data-bs-dismiss="modal" id="btnCancelarRegistroStock">Cancelar</a>
-        <a class="btn btn-primary btn-sm" id="btnGuardarNuevorStock">Guardar</a>
-      </div>
-
-    </div>
-  </div>
-</div> -->
 <!-- VENTANA MODAL PARA MODIFICAR STOCK -->
 <div class="modal fade" id="mdlGestionarStock" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog modal-lg" role="document">
@@ -589,8 +488,6 @@ VENTA MODAL PARA AUMENTAR O DISMINUIR EL STOCK DEL PRODUCTO
     </div>
   </div>
 </div>
-
-
 <!-- /. End -->
 
 
@@ -696,7 +593,6 @@ $(document).ready(function() {
     $("#iptStockSumar").val("")
     $("#iptPrecioCompra").val("")
     $("#iptPrecioVenta").val("")
-    $("#iptPrecioFeria").val("")
     $("#iptDocumento").val("")
     $("#selProv").val("0")
     $("#fechaRegistro").val("")
@@ -854,7 +750,7 @@ function fnc_CargarDataTableInventario() {
         className: 'control'
       },
       {
-        targets: [2, 12, 13, 14, 15, 16, 17, 18],
+        targets: [2, 12, 13, 14, 15],
         visible: false
       },
       {
@@ -947,18 +843,15 @@ function fnc_ModalActualizarProducto(fila_actualizar) {
   $("#codigo_producto").prop('readonly', true);
 
   $("#codigo_producto").val(data[3]);
-  $("#id_categoria").val(data[14]).change();
-  $("#id_subcategoria").val(data[15]).change();
-  $("#doc_producto").val(data[17]);
+  $("#id_categoria").val(data[12]).change();
+  $("#id_subcategoria").val(data[13]).change();
+  $("#doc_producto").val(data[14]);
   $("#descripcion").val(data[4]);
   $("#precio_compra").val(data[8]);
   $("#precio_venta").val(data[9]);
-  $("#precio_feria").val(data[12]);
-  $("#precio_oferta").val(data[13]);
   $("#descuento_producto").val(data[10]);
   $("#stock_producto").val(data[7]);
-  $("#id_unidad_medida").val(data[16]);
-  $("#id_proveedor").val(data[18]).change();
+  $("#id_proveedor").val(data[15]).change();
   
   // var formData = new FormData();
   // formData.append('accion', accion)
@@ -1250,37 +1143,6 @@ function fnc_ActualizarStock() {
   } else {
     mensajeToast(response["tipo_msj"], response["msj"]);
   }
-
-  // if ($("#iptStockSumar").val() != "" && $("#iptStockSumar").val() > 0) {
-
-  //   var nuevoStock = parseFloat($("#stock_NuevoStock").html()),
-  //     codigo_producto = $("#stock_codigoProducto").html();
-
-  //   var datos = new FormData();
-
-  //   datos.append('accion', 'aumentar_disminuir_stock');
-  //   datos.append('nuevoStock', nuevoStock);
-  //   datos.append('codigo_producto', codigo_producto);
-  //   datos.append('tipo_movimiento', operacion_stock);
-
-  //   //Solicitud para verificar el Stock del Producto
-  //   response = SolicitudAjax("ajax/productos_inventario.ajax.php", "POST", datos);
-
-  //   if (response["tipo_msj"] == "success") {
-  //     $("#stock_NuevoStock").html("");
-  //     $("#iptStockSumar").val("");
-
-  //     $("#mdlGestionarStock").modal('hide');
-
-  //     $("#tbl_inventario").DataTable().ajax.reload();
-  //     mensajeToast(response["tipo_msj"], response["msj"])
-  //   }
-
-
-  // } else {
-  //   mensajeToast('error', 'Debe ingresar la cantidad a aumentar');
-  //   return false;
-  // }
 }
 
 
@@ -1301,12 +1163,9 @@ function fnc_limpiarFormulario() {
   $("#descripcion").val('');
   $("#precio_compra").val("");
   $("#precio_venta").val("");
-  $("#precio_feria").val("");
-  $("#precio_oferta").val("");
   $("#porciento").val("");
   $("#descuento_producto").val("");
   $("#stock_producto").val("");
-  $("#id_unidad_medida").val("");
   $("#id_proveedor").val("");
 
   fnc_SelectCategorias();

@@ -16,8 +16,20 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
 
   <style>
+  :root {
+    /* Paleta plomo + rojo */
+    --plomo-900: #2b2f36;
+    --plomo-700: #3f454e;
+    --plomo-500: #6b7280;
+    --plomo-300: #cbd0d6;
+    --plomo-100: #f2f4f6;
+    --rojo-600: #c62828;
+    --rojo-500: #d32f2f;
+    --rojo-400: #e53935;
+  }
+
   body {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--plomo-900) 0%, var(--plomo-700) 100%);
     font-family: 'Roboto', sans-serif;
     min-height: 100vh;
     display: flex;
@@ -33,11 +45,11 @@
   }
 
   .login-card {
-    background: white;
+    background: #ffffff;
     border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
     padding: 40px;
-    backdrop-filter: blur(10px);
+    border-top: 4px solid var(--rojo-500);
   }
 
   .login-header {
@@ -45,39 +57,70 @@
     margin-bottom: 40px;
   }
 
+  /* Logo en lugar del ícono */
+  .login-logo {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 96px;
+    height: 96px;
+    margin-bottom: 16px;
+    background: var(--plomo-100);
+    border-radius: 50%;
+    padding: 12px;
+    box-shadow: inset 0 0 0 2px var(--plomo-300);
+  }
+
+  .login-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+  }
+
   .login-header h1 {
-    color: #667eea;
-    font-size: 2.5rem;
+    color: var(--plomo-900);
+    font-size: 2.2rem;
     font-weight: 700;
     margin: 0;
     letter-spacing: -1px;
   }
 
+  .login-header h1 span {
+    color: var(--rojo-500);
+  }
+
   .login-header p {
-    color: #666;
+    color: var(--plomo-500);
     font-size: 1rem;
     margin-top: 10px;
   }
 
   .input-field input[type=text]:focus+label,
   .input-field input[type=password]:focus+label {
-    color: #667eea !important;
+    color: var(--rojo-500) !important;
   }
 
   .input-field input[type=text]:focus,
   .input-field input[type=password]:focus {
-    border-bottom: 2px solid #667eea !important;
-    box-shadow: 0 1px 0 0 #667eea !important;
+    border-bottom: 2px solid var(--rojo-500) !important;
+    box-shadow: 0 1px 0 0 var(--rojo-500) !important;
   }
 
   .input-field input[type=text],
   .input-field input[type=password] {
-    border-bottom: 2px solid #ddd;
+    border-bottom: 2px solid var(--plomo-300);
     transition: all 0.3s ease;
+    color: var(--plomo-900);
+  }
+
+  .input-field input[type=text]:not(:focus):not(:placeholder-shown)+label,
+  .input-field input[type=password]:not(:focus):not(:placeholder-shown)+label {
+    color: var(--plomo-500);
   }
 
   .btn-login {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, var(--plomo-700) 0%, var(--plomo-900) 100%);
     width: 100%;
     height: 50px;
     line-height: 50px;
@@ -86,33 +129,29 @@
     font-weight: 500;
     text-transform: uppercase;
     letter-spacing: 1px;
-    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
     transition: all 0.3s ease;
     margin-top: 20px;
+    border-left: 4px solid var(--rojo-500);
   }
 
   .btn-login:hover {
-    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.6);
+    background: linear-gradient(135deg, var(--rojo-500) 0%, var(--rojo-600) 100%);
+    box-shadow: 0 6px 20px rgba(198, 40, 40, 0.45);
     transform: translateY(-2px);
   }
 
   .input-field .prefix {
-    color: #667eea;
+    color: var(--plomo-500);
   }
 
   .input-field .prefix.active {
-    color: #667eea;
-  }
-
-  .card-icon {
-    font-size: 4rem;
-    color: #667eea;
-    margin-bottom: 20px;
+    color: var(--rojo-500);
   }
 
   /* Validation styles */
   .invalid-feedback {
-    color: #f44336;
+    color: var(--rojo-500);
     font-size: 0.8rem;
     margin-top: 5px;
     display: none;
@@ -128,15 +167,18 @@
   <div class="login-container">
     <div class="login-card">
       <div class="login-header">
-        <i class="material-icons card-icon">lock_outline</i>
-        <h1>AcerosMagno</h1>
+        <!-- LOGO (reemplaza la ruta por la tuya) -->
+        <div class="login-logo">
+          <img src="assets/img/logo.png" alt="Logo AcerosMagno">
+        </div>
+        <h1>Aceros<span>Magno</span></h1>
         <p>Sistema de Gestión</p>
       </div>
 
       <form method="post" class="needs-validation-login" novalidate>
         <!-- USUARIO DEL SISTEMA -->
         <div class="input-field">
-          <i class="material-icons prefix">persona</i>
+          <i class="material-icons prefix">person</i>
           <input type="text" id="loginUsuario" name="loginUsuario" required>
           <label for="loginUsuario">Usuario</label>
           <div class="invalid-feedback">Debe ingresar su usuario.</div>
@@ -174,63 +216,36 @@
     switch (type) {
       case "error":
         if (url == null) {
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: text,
-          });
+          Swal.fire({ icon: "error", title: "Error", text: text });
         } else {
-          Swal.fire({
-            icon: "error",
-            title: "Error",
-            text: text,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location = url;
-            }
+          Swal.fire({ icon: "error", title: "Error", text: text }).then((result) => {
+            if (result.isConfirmed) window.location = url;
           });
         }
         break;
       case "success":
         if (url == null) {
-          Swal.fire({
-            icon: "success",
-            title: "Success",
-            text: text,
-          });
+          Swal.fire({ icon: "success", title: "Success", text: text });
         } else {
-          Swal.fire({
-            icon: "success",
-            title: "Confirmación",
-            text: text,
-          }).then((result) => {
-            if (result.isConfirmed) {
-              window.location = url;
-            }
+          Swal.fire({ icon: "success", title: "Confirmación", text: text }).then((result) => {
+            if (result.isConfirmed) window.location = url;
           });
         }
         break;
     }
   }
 
-  // Initialize Materialize components
   document.addEventListener('DOMContentLoaded', function() {
-    // Auto-focus on username field
     var usernameField = document.getElementById('loginUsuario');
-    if (usernameField) {
-      usernameField.focus();
-    }
+    if (usernameField) usernameField.focus();
 
-    // Form validation
     var form = document.querySelector('.needs-validation-login');
     form.addEventListener('submit', function(event) {
       var usuario = document.getElementById('loginUsuario').value.trim();
       var password = document.getElementById('loginPassword').value.trim();
       var isValid = true;
 
-      // Hide all invalid feedbacks
-      var feedbacks = form.querySelectorAll('.invalid-feedback');
-      feedbacks.forEach(function(fb) {
+      form.querySelectorAll('.invalid-feedback').forEach(function(fb) {
         fb.style.display = 'none';
       });
 
