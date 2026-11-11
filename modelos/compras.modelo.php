@@ -183,7 +183,6 @@ class ComprasModelo
                                                         observa_venta,
                                                         vendedorID,
                                                         tipoPago,
-                                                        docuVenta, 
                                                         usuarioID, 
                                                         fecha_entrega)         
                                                 VALUES(:nro_boleta,
@@ -192,7 +191,6 @@ class ComprasModelo
                                                       :obs_venta,
                                                       :codVendedor,
                                                       :tipoPago,
-                                                      :docVenta,
                                                       :usuarioID,
                                                       :fecha_entrega)");
             $dbh->beginTransaction();
@@ -203,7 +201,6 @@ class ComprasModelo
                 ':obs_venta' => $formulario_compra["iptObservacion"],
                 ':codVendedor' => $formulario_compra["selVendedor"],
                 ':tipoPago' => $formulario_compra["selTipoPago"],
-                ':docVenta' => $formulario_compra["selDocumentoVenta"],
                 ':usuarioID' => $formulario_compra["codUsuario"],
                 ':fecha_entrega' => $formulario_compra["iptFechaEntrega"]
             ));

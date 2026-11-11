@@ -69,7 +69,7 @@ if (isset($_SESSION['usuario'])) {
             </div>
 
             <!-- SELECCIONAR TIPO DE DOCUMENTO -->
-            <div class="col-12 col-md-7 col-lg-3">
+            <!-- <div class="col-12 col-md-7 col-lg-3">
               <div class="form-floating mb-2">
 
                 <select class="form-select select2" aria-label="Floating label select example" id="selDocumentoVenta"
@@ -82,7 +82,7 @@ if (isset($_SESSION['usuario'])) {
                 <div class="invalid-feedback">Seleccione Tipo de Documento</div>
 
               </div>
-            </div>
+            </div> -->
 
             <!-- SELECCIONAR TIPO DE PAGO -->
             <div class="col-12 col-md-7 col-lg-3">
@@ -123,7 +123,6 @@ if (isset($_SESSION['usuario'])) {
               <?php endif; ?>
             </div>
 
-
             <!-- FECHA DE ENTREGA -->
             <div class="col-12 col-md-4 col-lg-2">
               <div class="input-group mb-3">
@@ -141,7 +140,6 @@ if (isset($_SESSION['usuario'])) {
               </div>
             </div>
 
-
             <!-- SERIE -->
             <div class="col-12 col-md-4 col-lg-1">
               <div class="form-floating mb-2">
@@ -153,6 +151,7 @@ if (isset($_SESSION['usuario'])) {
               </div>
             </div>
 
+            <!-- NRO VENTA -->
             <div class="col-12 col-md-4 col-lg-2">
               <div class="form-floating mb-2">
                 <input type="text" min="0" name="iptNroVenta" id="iptNroVenta" class="form-control form-control-sm"
@@ -172,8 +171,8 @@ if (isset($_SESSION['usuario'])) {
                 <label for="iptObservacion">Observaciones </label>
               </div>
             </div>
-
-
+          </div>
+          <div class="row mb-2">
             <!-- BUSCAR PRODUCTO -->
             <div class="col-12 col-md-6 col-lg-3 my-lg-3">
               <a class="btn btn-info w-100 fw-bold btnBuscarProducto rounded-pill">
@@ -197,7 +196,7 @@ if (isset($_SESSION['usuario'])) {
         </form>
 
         <!-- --------------------------------------------------------- -->
-        <!--LISTADO DE PRODUCTOS --> SELECCIONADOS PARA LA VENTA
+        <!--LISTADO DE PRODUCTOS --> <h5 class="m-0">SELECCIONADOS PARA LA VENTA</h5>
         <!-- --------------------------------------------------------- -->
         <div class="row mb-3">
 
@@ -230,7 +229,6 @@ if (isset($_SESSION['usuario'])) {
         <div class="row">
 
           <div class="col-12 offset-md-6 col-md-6 offset-lg-8 col-lg-4">
-
             <div class="card card-gray shadow float-right">
 
               <div class="card-header">
@@ -271,13 +269,11 @@ if (isset($_SESSION['usuario'])) {
                 <br>
                 <div class="row fw-bold">
 
-
                   <!-- SUBTOTAL -->
                   <div class="col-12">
                     <span>SUBTOTAL Bs.</span>
                     <span class="float-right" id="resumen_subtotal">0.00</span>
                   </div>
-
 
                   <!-- DESCUENTO -->
                   <div class="col-12 text-danger">
@@ -295,13 +291,9 @@ if (isset($_SESSION['usuario'])) {
                 </div>
 
               </div>
-
             </div>
-
           </div>
-
         </div>
-
       </div>
     </div>
 
@@ -354,11 +346,8 @@ MODAL LISTADO DE PRODUCTOS PARA ELEGIR AL MOMENTO DE LA VENTA
                   <th>P. Venta</th><!-- *9 -->
                   <th>Desct.%</th><!-- *10 -->
                   <th>Proveedor</th><!-- *11 -->
-                  <th>P. Feria</th><!-- 12 -->
-                  <th>P. Oferta</th><!-- 13 -->
                   <th>CategoriaId</th><!-- 14 -->
                   <th>SubCategoriaId</th><!-- 15 -->
-                  <th>U.Medida</th><!-- 16 -->
                   <th>DocuCompra</th><!-- 17 -->
                   <th>ProvId</th><!-- 18 -->
                 </tr>
@@ -856,7 +845,7 @@ function fnc_CargarDataTableProductos() {
         className: 'control'
       },
       {
-        targets: [0, 2, 5, 6, 8, 10, 11, 12, 13, 14, 15, 16, 17, 18],
+        targets: [0, 2, 5, 6, 8, 10, 11, 12, 13, 14, 15],
         visible: false
       },
       {
@@ -1185,7 +1174,7 @@ function fnc_ActualizarDatos() {
     $total_subtotal = $total_subtotal + $subtotal;
     $total_compra = $total_compra + $total;
     $total_descuento = $total_descuento + parseFloat($descuentoPor)
-    console.log("🚀 ~ file: compras.php:1495 ~ $ ~ $total_descuento:", $total_descuento)
+    //console.log("🚀 ~ file: compras.php:1495 ~ $ ~ $total_descuento:", $total_descuento)
 
     $('#tbl_ListadoProductos').DataTable().cell(index, 9).data(parseFloat($subtotal).toFixed(2))
     $('#tbl_ListadoProductos').DataTable().cell(index, 10).data(parseFloat($total).toFixed(2));
