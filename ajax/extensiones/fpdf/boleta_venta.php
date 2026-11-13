@@ -92,22 +92,25 @@ if (!$datoven) {
 
 $pdf = new FPDF("P", "mm", "Letter");
 $pdf->AddPage();
+$pdf->SetFont('Arial', 'B', 17);
+$pdf->Cell(190, 5, utf8_decode('ACEROS MAGNO'), 0, 1, "C");
 $pdf->SetFont('Arial', 'B', 15);
-$pdf->Cell(190, 5, utf8_decode('NOTA DE VENTA'), 0, 0, "C");
-$pdf->SetXY(160, 13);
-$pdf->SetFont('Arial', '', 8);
-$pdf->Cell(30, 5, utf8_decode('Fecha de Impresion: ') . $fechaHoy, 0, 1, "R");
-$pdf->SetFont('Arial', 'B', 12);
-$pdf->Cell(180, 5, utf8_decode('N°: ') . $codigo, 0, 1, "C");
+$pdf->Cell(190, 5, utf8_decode('Materiales de Construccion'), 0, 1, "C");
+//$pdf->SetXY(160, 13);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(190, 5, utf8_decode('Tubos|Perfiles|Angulares|Plancas '), 0, 1, "C");
+$pdf->SetXY(170, 12);
+$pdf->SetFont('Arial', 'B', 10);
+$pdf->Cell(30, 5, utf8_decode('NOTA DE VENTA: ') . $codigo, 0, 1, "R");
 $pdf->SetXY(10, 25);
 $pdf->SetFont('Arial', '', 8);
-$pdf->Cell(30, 5, utf8_decode($fonos), 0, 1, "R");
-$pdf->SetXY(160, 17);
+$pdf->Cell(30, 5, '', 0, 1, "R");
+$pdf->SetXY(170, 17);
 $pdf->SetFont('Arial', '', 8);
-$pdf->Cell(30, 5, utf8_decode('Tipo de Documento:') . '(' . $tipodoc . ')', 0, 1, "R");
-$pdf->SetXY(160, 21);
+$pdf->Cell(30, 5, utf8_decode('Fecha de Impresion: ') . $fechaHoy , 0, 1, "R");
+$pdf->SetXY(170, 21);
 $pdf->Cell(30, 5, utf8_decode('Forma de Pago: ') . $fpago, 0, 1, "R");
-$pdf->Image("../fpdf/images/logo_oficial.png", 10, 5, 35, 20);
+$pdf->Image("../fpdf/images/aceros_mago_v3.png", 15, 8, 30, 20);
 
 //DATOS DEL CLIENTE Y LA VENTA 
 $pdf->SetXY(10, 32);
@@ -149,7 +152,7 @@ $pdf->SetFont('Arial', 'B', 8);
 $pdf->SetXY(100, 40);
 $pdf->Cell(20, 5, utf8_decode('Vendedor:'), 0, 0, "L");
 $pdf->SetFont('Arial', '', 8);
-$pdf->Cell(30, 5, utf8_decode(isset($datoven["nombre_usuario"]) ? $datoven["nombre_usuario"] : '') . ' (' . (isset($datoven["telefono"]) ? $datoven["telefono"] : '') . ')', 0, 1, "L");
+$pdf->Cell(30, 5, utf8_decode(isset($datoven["nombre_usuario"]) ? $datoven["nombre_usuario"] : '') , 0, 1, "L");
 
 // TITULOS DEL REPORTE
 

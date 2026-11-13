@@ -1332,21 +1332,25 @@ function fnc_GuardarCompra() {
 
           title: 'Decea IMPRIMIR la nota de Venta?',
           icon: 'success',
+          showDenyButton: true,
           showCancelButton: true,
           confirmButtonColor: '#3085d6',
           cancelButtonColor: '#d33',
           confirmButtonText: 'Si, deceo imprimir!',
           cancelButtonText: 'No, deceo imprimir por ahora!',
+          denyButtonText: 'Si, Imprimir Proforma!',
         }).then((result) => {
-          if (result.isConfirmed) {
+          // if (result.isConfirmed) {
+          //   window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
+          //     nro_boleta);
+          //   //window.open("https://faraonv2.infinitassoluciones.net//ajax/extensiones/fpdf/boleta_venta.php?codigo=" + nro_boleta);
 
-
-            window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
+          // }
+          if (result.isConfirmed) window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/boleta_venta.php?codigo=" +
               nro_boleta);
-            //window.open("https://faraonv2.infinitassoluciones.net//ajax/extensiones/fpdf/boleta_venta.php?codigo=" + nro_boleta);
-
-
-          }
+          else if (result.isDenied) window.open("http://localhost/acerosmagno//ajax/extensiones/fpdf/proforma.php?codigo=" +
+              nro_boleta);
+          
         })
 
         fnc_LimpiarFomulario();
